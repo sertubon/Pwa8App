@@ -1,17 +1,49 @@
-﻿@{
-    ViewData["Title"] = "Contact";
+﻿
+
+@{
+    ViewData["Title"] = "กองเทคโนโลยีสารสนเทศ";
 }
-<h2>@ViewData["Title"].</h2>
-<h3>@ViewData["Message"]</h3>
+<style>
+    #map {
+        height: 400px;
+        width: 700px;
+    }
+   
+</style>
+<h2>@ViewData["Title"]<br />งานบริการคอมพิวเตอร์และเครือข่าย.</h2>
+<img src="~/images/0009978.jpg" alt="รหัสพนักงาน:9978" />
+<h3>นายประเสริฐ  วะยะลุน</h3>
 
 <address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
+   การประปาส่วนภูมิภาคเขต ๘<br />
+    ๓๗ หมู่ ๒๓ ต.ขามใหญ่ อ.เมือง, จ.อุบลราชธานี 34000<br />
+    <abbr title="เบอร์สำนักงาน">เบอร์สำนักงาน:</abbr>
+    0-4531-1432-4 <br/>
+    <abbr title="เบอร์มือถือ">เบอร์มือถือ:</abbr>
+    0981563576
 </address>
-
 <address>
-    <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+    <strong>อีเมล์:</strong> <a href="mailto:prasertv@pwa.co.th">prasertv@pwa.co.th</a><br />  <br />
+    <strong>Line:</strong>&nbsp;&nbsp;<img src="~/images/QR Code.jpg" alt="Qrcode Line" height="100" width="100" />  
 </address>
+<div class="row">
+    แผนที่สำนักงาน
+    <div id="map"></div>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: { lat: 15.276604, lng: 104.852306 },
+            zoom: 15,
+            mapTypeId: 'hybrid'
+
+        });
+        var marker = new google.maps.Marker({
+            position: { lat: 15.276604, lng: 104.852306 },
+            map: map
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABBTAKP2CDbAoUNRTNLiYOVowR-9IKlis&callback=initMap"
+            async defer></script>
+</div>
